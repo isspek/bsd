@@ -13,6 +13,10 @@ try: # for pip >= 10
 except ImportError: # for pip <= 9.0.3
     from pip.req import parse_requirements
 
+try: # for pip >= 10
+    from pip._internal import download
+except ImportError: # for pip <= 9.0.3
+    from pip import download
 
 # new versions of pip requires a session
 requirements = parse_requirements(
