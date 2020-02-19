@@ -20,7 +20,7 @@ except ImportError: # for pip <= 9.0.3
 
 # new versions of pip requires a session
 requirements = parse_requirements(
-    'requirements.txt', session=pip.download.PipSession()
+    'requirements.txt', session=download.PipSession()
 )
 
 for item in requirements:
