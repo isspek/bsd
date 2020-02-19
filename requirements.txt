@@ -2,7 +2,6 @@ pytest
 vaderSentiment
 -e git+https://github.com/pattern3/pattern.git#egg=pattern
 nltk
-requests
 textstat
 future==0.16.0
 decorator==4.2.1
@@ -11,3 +10,20 @@ sklearn==0.0
 scikit-learn==0.19.1
 numpy==1.14.2
 scipy==1.0.0
+
+certifi==2018.4.16
+chardet==3.0.4
+click==6.7
+Flask==0.12.2
+Flask-Cors==3.0.7
+Flask-MySQL==1.4.0
+gunicorn==19.7.1
+idna==2.6
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+PyMySQL==0.9.3
+requests==2.18.4
+six==1.12.0
+urllib3==1.22
+Werkzeug==0.14.1

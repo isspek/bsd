@@ -1,8 +1,10 @@
 #!/usr/bin/env python
-from __future__ import print_function
 from __future__ import absolute_import
-from .bias import compute_bias, extract_bias_features
+from __future__ import print_function
+
 from flask import Flask, request, jsonify
+
+from bias import compute_bias, extract_bias_features
 
 app = Flask(__name__)
 
@@ -27,6 +29,7 @@ def enumerate_pairs(json):
     else:
         raise TypeError('Argument must be a list of dictionaries')
 
+
 @app.route("/bias", methods=['POST', 'GET'])
 def bias():
     if request.method == 'GET':
@@ -45,6 +48,7 @@ or
         reqjson = request.get_json()
         d = [handle_statement(stmt, feat) for stmt, feat in enumerate_pairs(reqjson)]
         return jsonify(d), 200
+
 
 # def main(instream=stdin, outstream=stdout):
 #     """handle a stream of stateents in line delimited text"""
@@ -66,6 +70,5 @@ or
 #             continue
 
 
-
-# if __name__ == '__main__':
-    # main()
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')

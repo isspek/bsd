@@ -23,7 +23,7 @@ from collections import OrderedDict
 from decorator import contextmanager
 from pattern.text.en import Sentence, parse, modality
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer as Vader_Sentiment
-from bsdetector.caster import caster
+from caster import caster
 
 
 class Lexicons(object):
