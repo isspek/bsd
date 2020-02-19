@@ -8,8 +8,14 @@ version = '0.1'
 links = []  # for repo urls (dependency_links)
 requires = []  # for package names
 
+try: # for pip >= 10
+    from pip._internal.req import parse_requirements
+except ImportError: # for pip <= 9.0.3
+    from pip.req import parse_requirements
+
+
 # new versions of pip requires a session
-requirements = pip.req.parse_requirements(
+requirements = parse_requirements(
     'requirements.txt', session=pip.download.PipSession()
 )
 
