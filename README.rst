@@ -47,3 +47,18 @@ Python Code Example
 For a **more complete demo**, go to the install directory and run ``python bias.py``. (Be sure you are set to handle UTF-8 encoding in your terminal or IDE.)
 
 You can also inspect the code for the ``demo_sample_news_story_sentences()`` function for an idea of how to use BS Detector.
+
+
+====================================
+How to run as docker server
+====================================
+1- build image:
+::
+    docker build -t bsd:latest
+2- execute the image:
+::
+    docker run -p 5000:5000 bsd
+
+To test run the following request:
+::
+    curl -X POST -d '[{"statement":"Hello cruel world", "features":1}]' -H "Content-Type: application/json"  localhost:5000/bias
